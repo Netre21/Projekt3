@@ -2,6 +2,7 @@
 #include"ksiazki.hpp"
 #include<stdlib.h>
 #include"random.h"
+#include<fstream>
 using namespace std;
 
 ksiazki::ksiazki()
@@ -13,6 +14,7 @@ ksiazki::ksiazki()
     ksiegozbior[1]=b;
     kategoria c(60,10,"sci-fi");
     ksiegozbior[2]=c;
+    wczytajzpliku();
     }
 void ksiazki::drukuj()
     {
@@ -88,3 +90,34 @@ int ksiazki::losujkat()
     return n;
     }
 
+void ksiazki::wczytajzpliku()
+    {
+    ifstream plik;
+    plik.open("wksiazki.txt");
+    if(!plik.good())
+        {
+        cout<<"nie powiodlo sie wczytanie"<<endl;
+        return;
+        }
+    int licz;
+    plik>>licz;
+    string c;
+    int a;
+    int b;
+    kategoria *temp;
+    temp=new kategoria [licz+liczba];
+    for(int i=0;i<liczba;i++)
+        {
+        temp[i]=ksiegozbior[i];
+        }
+    for(int i=liczba;i<licz+liczba;i++)
+        {
+        plik>>a>>b;
+        getline(plik,c);
+        kategoria X(a,b,c);
+        temp[i]=X;
+        }
+    delete ksiegozbior;
+    ksiegozbior=temp;
+    liczba=liczba+licz;
+    }

@@ -15,7 +15,6 @@ using namespace std;
     int koszt();
     int ile();
     string jnazwa();
-
     friend ostream& operator<<(ostream& out,kategoria &p);
     };
 
@@ -32,6 +31,7 @@ string knazwa(int n);
 void zmniejszi(int n);
 void zwiekszbib(int a, int b, string c);
 int losujkat();
+void wczytajzpliku();
     };
 
 
