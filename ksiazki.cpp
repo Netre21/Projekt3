@@ -117,7 +117,7 @@ void ksiazki::wczytajzpliku()
         kategoria X(a,b,c);
         temp[i]=X;
         }
-    delete ksiegozbior;
+    delete[] ksiegozbior;
     ksiegozbior=temp;
     liczba=liczba+licz;
     }

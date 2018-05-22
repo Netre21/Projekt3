@@ -1,0 +1,62 @@
+# depslib dependency file v1.0
+1527031393 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.cpp
+	"klient.hpp"
+	<cstdlib>
+	<ctime>
+	<windows.h>
+	"random.h"
+
+1527017567 c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.hpp
+
+1527027071 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\main.cpp
+	"sklep.hpp"
+	<fstream>
+	<iostream>
+
+1527029899 c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.hpp
+	"klient.hpp"
+	<queue>
+	"ks.hpp"
+
+1527031331 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.cpp
+	"sklep.hpp"
+	<iostream>
+	"ks.hpp"
+	<ctime>
+	<cstdlib>
+	<windows.h>
+	"random.h"
+
+1525991069 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\random.cpp
+	"random.h"
+	<cstdlib>
+	<cmath>
+	<ctime>
+	<queue>
+	"static.h"
+
+1525991060 c:\users\netre\desktop\proi\projekt3\ksiegarnia\random.h
+	<string>
+
+1507219740 c:\users\netre\desktop\proi\projekt3\ksiegarnia\static.h
+
+1527008309 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\ksiazki.cpp
+	<iostream>
+	"ksiazki.hpp"
+	<stdlib.h>
+	"random.h"
+	<fstream>
+
+1526944512 c:\users\netre\desktop\proi\projekt3\ksiegarnia\ksiazki.hpp
+	<stdlib.h>
+	<string>
+
+1527023756 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\ks.cpp
+	<stdlib.h>
+	"random.h"
+	"ks.hpp"
+
+1527024618 c:\users\netre\desktop\proi\projekt3\ksiegarnia\ks.hpp
+	<stdlib.h>
+	<string>
+

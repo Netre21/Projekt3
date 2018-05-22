@@ -34,8 +34,8 @@
 		<Unit filename="init.h" />
 		<Unit filename="klient.cpp" />
 		<Unit filename="klient.hpp" />
-		<Unit filename="ksiazki.cpp" />
-		<Unit filename="ksiazki.hpp" />
+		<Unit filename="ks.cpp" />
+		<Unit filename="ks.hpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="random.cpp" />
 		<Unit filename="random.h" />

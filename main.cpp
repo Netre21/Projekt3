@@ -1,15 +1,20 @@
 #include"sklep.hpp"
-#include<queue>
-#include<cstdlib>
+#include<fstream>
 #include<iostream>
-#include<ctime>
-#include"ksiazki.hpp"
 using namespace std;
 int main()
 {
-
-sklep empik(3,2);
-empik.zycie(40);
-
+ifstream plik;
+plik.open("wksiazki.txt");
+if(!plik.good())
+    {
+    cout<<"blad oczytu"<<endl;
+    return 0;
+    }
+int a,b,c,d,e,f;
+plik>>a>>b>>c>>d>>e>>f;
+sklep empik(a,b,c,d,e);
+empik.zycie(f);
+cout<<a<<" "<<b<<" "<<c<<" "<<d<<" "<<e<<" "<<f;
 
 }

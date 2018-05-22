@@ -20,11 +20,8 @@ int klient::zyj()
 
     if(randomChance(0.2)&& czynnosc!=1)//kupuje ksiazke
         {
-        if(czynnosc!=1)
-            {
-            czynnosc=1;
-            return 1;
-            }
+        czynnosc=1;
+        return 1;
         }
     if(randomChance(0.1) && czynnosc!=1)// rezerwuje ksiazke
         {
@@ -35,6 +32,11 @@ int klient::zyj()
         {
         czynnosc=1;
         return 3;
+        }
+    if(randomChance(0.4) && czynnosc!=1)
+        {
+        czynnosc=1;
+        return 4;
         }
     return 0;
     }

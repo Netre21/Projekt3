@@ -1,3 +1,1 @@
-2
-14 12o komputerowa
-34 65humanistyka
+3 6 4 5 7 40
