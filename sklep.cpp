@@ -160,7 +160,7 @@ void sklep::zycie(int n)//funckcja, ktora odpowiada za zycie sklepu
             }
         uzyciekasy();
         otwarty=otwarty+1;
-        Sleep(10);//czekamy 1s
+        Sleep(1000);//czekamy 1s
         if(randomChance(0.3))//losujemy czy w danej jednostce czasu jakis klient wszedl do sklepu
             {
             klient a(maxk);
