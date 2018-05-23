@@ -8,12 +8,12 @@ klient::klient(int n)
     numer=n;
     zajety=false;
     }
-int klient::nr()
+int klient::nr()//zwraca numer klienta
     {
     return numer;
     }
 
-int klient::zyj()
+int klient::zyj()//wylosuj czynnosc
     {
     int czynnosc;
     czynnosc=0;

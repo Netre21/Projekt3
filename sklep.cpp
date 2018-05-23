@@ -9,7 +9,7 @@ using namespace std;
 
 sklep::sklep(int ka,int pracownicy, int przyr, int komp, int hum)
     {
-    if(ka>=pracownicy)
+    if(ka>=pracownicy)//zapelniamy kasy pracownikami
         {
         ilosckas=pracownicy;
         pracownicynasali=0;
@@ -19,36 +19,48 @@ sklep::sklep(int ka,int pracownicy, int przyr, int komp, int hum)
         ilosckas=ka;
         pracownicynasali=pracownicy-ka;
         }
-    kasy=new queue<int> [ilosckas];
-    for(int i=0;i<ilosckas;i++)
+    kasy=new queue<int> [ilosckas];//towrzymy tablice kolejek, w ktorej bedziemy przechowywali klientow czekajacych do danej kasy
+    for(int i=0;i<ilosckas;i++)//tworzymy kolejki
         {
         queue<int> kolejka;
         kasy[i]=kolejka;
         }
-    czas=new int [ilosckas];
+    czas=new int [ilosckas];//tablica int, by wiedziec ile czasu stoi pierwsza osoba przy kasie (czas obslugi)
     for(int i=0;i<ilosckas;i++)
         {
-        czas[i]=4;
+        czas[i]=4;//klient potrzebuje 4 jednostek czasu przy kasie, zeby kupic ksiazke
         }
-    for(int i=0;i<przyr;i++)
+    //tworzymy vector, ktory przechowuje ksiazki 3 typow: przyrodniczych, humanistycznych i komputerowych
+    for(int i=0;i<przyr;i++)//zapelniamy vector ksiazkami przyrodniczymi
         {
         przyrodnicze PR();
         ksiazki.push_back(new przyrodnicze());
         }
-    for(int i=0;i<komp;i++)
+    for(int i=0;i<komp;i++)//komputerowymi
         {
         komputerowe KP();
         ksiazki.push_back(new komputerowe());
         }
-    for(int i=0;i<hum;i++)
+    for(int i=0;i<hum;i++)//humanistycznymi
         {
         humanistyczne HM();
         ksiazki.push_back(new humanistyczne());
         }
-    zajecie_pracownikow=new int [pracownicynasali];
+    zajecie_pracownikow=new int [pracownicynasali];//tablica int, gdzie przechowujemy informacje czy w danej jednostce czasu pracownik na sali z kims rozmawia
     }
 
-int sklep::szukajkasy()
+sklep::~sklep()
+    {
+    delete [] zajecie_pracownikow;
+    delete [] czas;
+    delete [] kasy;
+    for(int i=0;i<ksiazki.size();i++)
+        {
+        delete ksiazki[i];
+        }
+    }
+
+int sklep::szukajkasy()//funckja, ktora wyszukuje kase z najmniejsza kolejka i tam kieruje klienta
     {
     int minimum;
     minimum=kasy[0].size();
@@ -64,18 +76,18 @@ int sklep::szukajkasy()
     return numerkolejki;
     }
 
-void sklep::zycie(int n)
+void sklep::zycie(int n)//funckcja, ktora odpowiada za zycie sklepu
     {
     int otwarty=1;
     int maxk=1;
-    while(otwarty<=n)
+    while(otwarty<=n)//czas otwarcia
         {
         cout<<"czas: "<<otwarty<<endl;
-        for(int i=0;i<klienci.size();i++)
+        for(int i=0;i<klienci.size();i++)//wykonujemy wnetrze petli dla kazdego klienta w sklepie
             {
-            if(!(klienci[i].stan()))
+            if(!(klienci[i].stan()))//jezeli klient nie jest zajety to losujemy jego aktywnosc metoda zyj z klasy klient
                 {
-                switch(klienci[i].zyj())
+                switch(klienci[i].zyj())//w zaleznosci od wylosowanej akcji zostaja podjete kolejne kroki
                     {
                     case 1:
                         cout<<"klient "<<klienci[i].nr()<<" idzie do kasy "<<szukajkasy()<<endl;
@@ -91,7 +103,7 @@ void sklep::zycie(int n)
                             {
                             if(klienci[j].nr()==klienci[i].nr())
                                 {
-                                klienci.erase(klienci.begin()+j);
+                                klienci.erase(klienci.begin()+j);//usuwamy klienta ze sklepu
                                 break;
                                 }
                             }
@@ -107,43 +119,46 @@ void sklep::zycie(int n)
                                 }
                             }
                         break;
+                    case 0://klient nic nie robi, wiec go pomijamy
+                        break;
                     default:
-                        klienci[i].zwolnij();
+                        string bledny_wybor="klient wybral czynnosc z poza swojego zakresu";
+                        throw bledny_wybor;
                         break;
                     }
                 }
             }
         uzyciekasy();
         otwarty=otwarty+1;
-        Sleep(100);
-        if(randomChance(0.3))
+        Sleep(10);//czekamy 1s
+        if(randomChance(0.3))//losujemy czy w danej jednostce czasu jakis klient wszedl do sklepu
             {
             klient a(maxk);
             klienci.push_back(a);
             cout<<"klient "<<maxk<<" wchodzi do sklepu"<<endl;
             maxk=maxk+1;
             }
-        for(int i=0;i<pracownicynasali;i++)
+        for(int i=0;i<pracownicynasali;i++)//rozmowa z klientem trwa jedna jednostke czasu, wiec pod koniec tej jednostki zmieniamy stan pracownikow na wolny
             {
             zajecie_pracownikow[i]=0;
             }
         }
     }
 
-void sklep::uzyciekasy()
+void sklep::uzyciekasy()//funkcja odpowiadajaca za przesuwanie kolejek przy kasach i informacji co kupuja klienci
     {
     int n;
     int koszt=-1;
     string knaz;
-    for(int j=0;j<ilosckas;j++)
+    for(int j=0;j<ilosckas;j++)//wykonaj zawartosc dla kazdej kasy
         {
-        if(kasy[j].size()!=0)
+        if(kasy[j].size()!=0)//jezeli ktos stoi przy kasie to wykonaj wnetrze
             {
-            czas[j]=czas[j]-1;
-            if(czas[j]==0)
+            czas[j]=czas[j]-1;//zmiejsz czas, ktory osoba pierwsza stoi przy kasie
+            if(czas[j]==0)//jezeli czas tej osoy minal to wykonaj wnetrze
                 {
-                czas[j]=4;
-                n=randomInteger(1,3);//ddddddddddddd
+                czas[j]=4;//ustaw czas dla kolejnej osoby
+                n=randomInteger(1,3);//losuj jedna z 3 kategori ksiazki
                 switch (n)
                     {
                 case 1:
@@ -156,37 +171,40 @@ void sklep::uzyciekasy()
                     knaz="humanistycznego";
                     break;
                     }
-                    for(int k=0;k<ksiazki.size();k++)
+                    for(int k=0;k<ksiazki.size();k++)//spradz dostepna ksiazki z danego dzialu
                         {
                         if(n==1)
                             {
-                            if(ksiazki[k]->knazwa()=="przyrodnicze")
+                            if(ksiazki[k]->knazwa()=="przyrodnicze")//jesli sie udalo usun ja z listy ksiazek dostepnych
                                 {
                                 koszt=ksiazki[k]->kcena();
+                                delete ksiazki[k];
                                 ksiazki.erase(ksiazki.begin()+k);
                                 break;
                                 }
                             }
                         if(n==2)
                             {
-                            if(ksiazki[k]->knazwa()=="komputerowe")
+                            if(ksiazki[k]->knazwa()=="komputerowe")//jesli sie udalo usun ja z listy ksiazek dostepnych
                                 {
                                 koszt=ksiazki[k]->kcena();
+                                delete ksiazki[k];
                                 ksiazki.erase(ksiazki.begin()+k);
                                 break;
                                 }
                             }
                         if(n==3)
                             {
-                            if(ksiazki[k]->knazwa()=="humanistyczne")
+                            if(ksiazki[k]->knazwa()=="humanistyczne")//jesli sie udalo usun ja z listy ksiazek dostepnych
                                 {
                                 koszt=ksiazki[k]->kcena();
+                                delete ksiazki[k];
                                 ksiazki.erase(ksiazki.begin()+k);
                                 break;
                                 }
                             }
                         }
-                if(koszt==-1)
+                if(koszt==-1)//koszt wynosi -1 tylko, gdy nie znaleziono ksiazki z wybranego przez klienta dzialu
                     {
                     cout<<"klientowi "<<kasy[j].front()<<". nie udaje sie kupic ksiazki z dzialu "<<knaz<<", w kasie numer "<<j+1<<" ,poniewaz sie skonczyly"<<endl;
                     }
@@ -194,14 +212,14 @@ void sklep::uzyciekasy()
                     {
                     cout<<"klient "<<kasy[j].front()<<" kupuje ksiazke z dzialu "<<knaz<<", w kasie numer "<<j+1<<" i placi za nia "<<koszt<<endl;
                     }
-                for(int k=0;k<klienci.size();k++)
+                for(int k=0;k<klienci.size();k++)//znajdz klienta, ktory wlasnie stal przy kasie
                     {
                     if(klienci[k].nr()==kasy[j].front())
                         {
-                        klienci[k].zwolnij();
+                        klienci[k].zwolnij();//zmien jego stan na wolny, by mogl wykonywac inne czynnosci
                         }
                     }
-                kasy[j].pop();
+                kasy[j].pop();//usun pierwszy element z kolejki, to znaczy ze klient kupil i odszedl od kasy
                 }
             }
         }

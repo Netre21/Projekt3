@@ -1,24 +1,24 @@
 # depslib dependency file v1.0
-1527031393 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.cpp
+1527082482 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.cpp
 	"klient.hpp"
 	<cstdlib>
 	<ctime>
 	<windows.h>
 	"random.h"
 
-1527017567 c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.hpp
+1527084325 c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.hpp
 
-1527027071 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\main.cpp
+1527084559 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\main.cpp
 	"sklep.hpp"
 	<fstream>
 	<iostream>
 
-1527029899 c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.hpp
+1527079703 c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.hpp
 	"klient.hpp"
 	<queue>
 	"ks.hpp"
 
-1527031331 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.cpp
+1527084745 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.cpp
 	"sklep.hpp"
 	<iostream>
 	"ks.hpp"
@@ -51,12 +51,12 @@
 	<stdlib.h>
 	<string>
 
-1527023756 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\ks.cpp
+1527082709 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\ks.cpp
 	<stdlib.h>
 	"random.h"
 	"ks.hpp"
 
-1527024618 c:\users\netre\desktop\proi\projekt3\ksiegarnia\ks.hpp
+1527084083 c:\users\netre\desktop\proi\projekt3\ksiegarnia\ks.hpp
 	<stdlib.h>
 	<string>
 

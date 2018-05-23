@@ -6,7 +6,16 @@
 #define sklep_hpp
 
 using namespace std;
-class sklep
+
+class intersklep
+{
+public:
+virtual void zycie(int n)=0;
+virtual int szukajkasy()=0;
+virtual void uzyciekasy()=0;
+};
+
+class sklep: public intersklep
     {
     int ilosckas;
     int pracownicynasali;
@@ -17,9 +26,10 @@ class sklep
     int *czas;
 public:
     sklep(int k,int o, int przyr, int komp, int hum);
-void zycie(int n);
-int szukajkasy();
-void uzyciekasy();
+    ~sklep();
+virtual void zycie(int n);
+virtual int szukajkasy();
+virtual void uzyciekasy();
     };
 
 #endif // sklep

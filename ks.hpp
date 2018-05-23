@@ -3,29 +3,37 @@
 #include<stdlib.h>
 #include<string>
 using namespace std;
-class ksiazka
+
+class ksiazka//klasa abstrakcyjna, ktora jest baza dla klas przyrodnicze, humanistyczne, komputerowe
     {
 public:
-    virtual int kcena()=0;
-    virtual string knazwa()=0;
+    int kscena;
+    virtual int kcena()=0;//funckja, ktora ma zwracac cene ksiazki
+    virtual string knazwa()=0;// funkcja, ktora ma zwracac nazwe dzialu ksiazki
     };
+
 class przyrodnicze : public ksiazka
     {
-
 public:
-    virtual int kcena();
-    virtual string knazwa();
+    przyrodnicze();
+    virtual int kcena();//zwraca cene ksiazki
+    virtual string knazwa();//zwraca nazwe dzialu ksiazki
     };
+
 class komputerowe : public ksiazka
     {
 public:
-    virtual int kcena();
-    virtual string knazwa();
+    komputerowe();
+    virtual int kcena();//zwraca cene ksiazki
+    virtual string knazwa();//zwraca nazwe dzialu ksiazki
     };
+
 class humanistyczne : public ksiazka
     {
-    virtual int kcena();
-    virtual string knazwa();
+public:
+    humanistyczne();
+    virtual int kcena();//zwraca cene ksiazki
+    virtual string knazwa();//zwraca nazwe dzialu ksiazki
     };
 
 
