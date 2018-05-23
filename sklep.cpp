@@ -7,7 +7,7 @@
 #include"random.h"
 using namespace std;
 
-sklep::sklep(int ka,int pracownicy, int przyr, int komp, int hum)
+sklep::sklep(int ka,int pracownicy, int przyr, int komp, int hum, int zap)
     {
     if(ka>=pracownicy)//zapelniamy kasy pracownikami
         {
@@ -47,6 +47,16 @@ sklep::sklep(int ka,int pracownicy, int przyr, int komp, int hum)
         ksiazki.push_back(new humanistyczne());
         }
     zajecie_pracownikow=new int [pracownicynasali];//tablica int, gdzie przechowujemy informacje czy w danej jednostce czasu pracownik na sali z kims rozmawia
+    zapis=zap;
+    if(zapis==1)
+        {
+        plikz.open("przebieg.txt",ios::trunc | ios::out);
+        if(plikz.good()!=1)
+            {
+            string blad="nie udalo sie otworzyc pliku do zapisywania";
+            throw blad;
+            }
+        }
     }
 
 sklep::~sklep()
@@ -83,6 +93,10 @@ void sklep::zycie(int n)//funckcja, ktora odpowiada za zycie sklepu
     while(otwarty<=n)//czas otwarcia
         {
         cout<<"czas: "<<otwarty<<endl;
+        if(zapis==1)
+            {
+            plikz<<"czas: "<<otwarty<<endl;
+            }
         for(int i=0;i<klienci.size();i++)//wykonujemy wnetrze petli dla kazdego klienta w sklepie
             {
             if(!(klienci[i].stan()))//jezeli klient nie jest zajety to losujemy jego aktywnosc metoda zyj z klasy klient
@@ -91,14 +105,26 @@ void sklep::zycie(int n)//funckcja, ktora odpowiada za zycie sklepu
                     {
                     case 1:
                         cout<<"klient "<<klienci[i].nr()<<" idzie do kasy "<<szukajkasy()<<endl;
+                        if(zapis==1)
+                            {
+                            plikz<<"klient "<<klienci[i].nr()<<" idzie do kasy "<<szukajkasy()<<endl;
+                            }
                         kasy[szukajkasy()-1].push( klienci[i].nr());
                         klienci[i].zajmij();
                         break;
                     case 2:
                         cout<<"klient "<<klienci[i].nr()<<" rezerwuje ksiazke"<<endl;
+                        if(zapis==1)
+                            {
+                            plikz<<"klient "<<klienci[i].nr()<<" rezerwuje ksiazke"<<endl;
+                            }
                         break;
                     case 3:
                         cout<<"klient "<<klienci[i].nr()<<" wychodzi z ksiegarni"<<endl;
+                        if(zapis==1)
+                            {
+                            plikz<<"klient "<<klienci[i].nr()<<" wychodzi z ksiegarni"<<endl;
+                            }
                         for(int j=0;j<klienci.size();j++)
                             {
                             if(klienci[j].nr()==klienci[i].nr())
@@ -114,6 +140,10 @@ void sklep::zycie(int n)//funckcja, ktora odpowiada za zycie sklepu
                             if(zajecie_pracownikow[j]==0)
                                 {
                                 cout<<"klient "<<klienci[i].nr()<<" rozmawia z pracownikiem "<<j+1<<endl;
+                                if(zapis==1)
+                                    {
+                                    plikz<<"klient "<<klienci[i].nr()<<" rozmawia z pracownikiem "<<j+1<<endl;
+                                    }
                                 zajecie_pracownikow[j]=1;
                                 break;
                                 }
@@ -136,6 +166,10 @@ void sklep::zycie(int n)//funckcja, ktora odpowiada za zycie sklepu
             klient a(maxk);
             klienci.push_back(a);
             cout<<"klient "<<maxk<<" wchodzi do sklepu"<<endl;
+            if(zapis==1)
+                {
+                plikz<<"klient "<<maxk<<" wchodzi do sklepu"<<endl;
+                }
             maxk=maxk+1;
             }
         for(int i=0;i<pracownicynasali;i++)//rozmowa z klientem trwa jedna jednostke czasu, wiec pod koniec tej jednostki zmieniamy stan pracownikow na wolny
@@ -207,10 +241,18 @@ void sklep::uzyciekasy()//funkcja odpowiadajaca za przesuwanie kolejek przy kasa
                 if(koszt==-1)//koszt wynosi -1 tylko, gdy nie znaleziono ksiazki z wybranego przez klienta dzialu
                     {
                     cout<<"klientowi "<<kasy[j].front()<<". nie udaje sie kupic ksiazki z dzialu "<<knaz<<", w kasie numer "<<j+1<<" ,poniewaz sie skonczyly"<<endl;
+                    if(zapis==1)
+                        {
+                        plikz<<"klientowi "<<kasy[j].front()<<". nie udaje sie kupic ksiazki z dzialu "<<knaz<<", w kasie numer "<<j+1<<" ,poniewaz sie skonczyly"<<endl;
+                        }
                     }
                 else
                     {
                     cout<<"klient "<<kasy[j].front()<<" kupuje ksiazke z dzialu "<<knaz<<", w kasie numer "<<j+1<<" i placi za nia "<<koszt<<endl;
+                    if(zapis==1)
+                        {
+                        plikz<<"klient "<<kasy[j].front()<<" kupuje ksiazke z dzialu "<<knaz<<", w kasie numer "<<j+1<<" i placi za nia "<<koszt<<endl;
+                        }
                     }
                 for(int k=0;k<klienci.size();k++)//znajdz klienta, ktory wlasnie stal przy kasie
                     {

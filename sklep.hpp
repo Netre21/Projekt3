@@ -1,6 +1,6 @@
 #include"klient.hpp"
 #include<queue>
-
+#include<fstream>
 #include"ks.hpp"
 #ifndef sklep_hpp
 #define sklep_hpp
@@ -17,6 +17,8 @@ virtual void uzyciekasy()=0;
 
 class sklep: public intersklep
     {
+    fstream plikz;
+    int zapis;
     int ilosckas;
     int pracownicynasali;
     int * zajecie_pracownikow;
@@ -25,7 +27,7 @@ class sklep: public intersklep
     vector<ksiazka *> ksiazki;
     int *czas;
 public:
-    sklep(int k,int o, int przyr, int komp, int hum);
+    sklep(int k,int o, int przyr, int komp, int hum,int zap=0);
     ~sklep();
 virtual void zycie(int n);
 virtual int szukajkasy();

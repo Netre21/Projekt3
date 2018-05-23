@@ -4,7 +4,7 @@
 using namespace std;
 int main()
 {
-ifstream plik;
+fstream plik;
 try//podaje moj kod
     {
     plik.open("wksiazki.txt");
@@ -34,7 +34,7 @@ try//podaje moj kod
         throw w4;
         }
 
-    sklep empik(a,b,c,d,e);
+    sklep empik(a,b,c,d,e,1);
     empik.zycie(f);
     }
 catch(string w)//wyjatki, gdy udalo sie otworzyc plik, wiec musimy go zamknac

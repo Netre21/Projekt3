@@ -8,17 +8,18 @@
 
 1527084325 c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.hpp
 
-1527084559 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\main.cpp
+1527087198 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\main.cpp
 	"sklep.hpp"
 	<fstream>
 	<iostream>
 
-1527079703 c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.hpp
+1527087108 c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.hpp
 	"klient.hpp"
 	<queue>
+	<fstream>
 	"ks.hpp"
 
-1527084745 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.cpp
+1527086964 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.cpp
 	"sklep.hpp"
 	<iostream>
 	"ks.hpp"
