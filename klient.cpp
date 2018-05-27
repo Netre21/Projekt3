@@ -1,13 +1,24 @@
 #include"klient.hpp"
+
 #include<cstdlib>
 #include<ctime>
 #include<windows.h>
 #include"random.h"
+enum dzialanie
+{
+nic_nie_robi=0,
+kupuje_ksiazke=1,
+rezerwuje_ksiazke=2,
+opuszcza_ksiegarnie=3,
+rozmawia_z_pracownikiem=4,
+};
+
 klient::klient(int n)
     {
     numer=n;
     zajety=false;
     }
+
 int klient::nr()//zwraca numer klienta
     {
     return numer;
@@ -15,30 +26,31 @@ int klient::nr()//zwraca numer klienta
 
 int klient::zyj()//wylosuj czynnosc
     {
+    dzialanie klienta;
     int czynnosc;
-    czynnosc=0;
+    czynnosc=nic_nie_robi;
 
-    if(randomChance(0.2)&& czynnosc!=1)//kupuje ksiazke
+    if(RN.losuj(0.2)&& czynnosc!=1)//kupuje ksiazke
         {
         czynnosc=1;
-        return 1;
+        return kupuje_ksiazke;
         }
-    if(randomChance(0.1) && czynnosc!=1)// rezerwuje ksiazke
+    if(RN.losuj(0.1) && czynnosc!=1)// rezerwuje ksiazke
         {
         czynnosc=1;
-        return 2;
+        return rezerwuje_ksiazke;
         }
-    if(randomChance(0.1) && czynnosc!=1)// opuszcza ksiegarnie
+    if(RN.losuj(0.1) && czynnosc!=1)// opuszcza ksiegarnie
         {
         czynnosc=1;
-        return 3;
+        return opuszcza_ksiegarnie;
         }
-    if(randomChance(0.4) && czynnosc!=1)
+    if(RN.losuj(0.4) && czynnosc!=1)//rozmawia z pracownikiem
         {
         czynnosc=1;
-        return 4;
+        return rozmawia_z_pracownikiem;
         }
-    return 0;
+    return nic_nie_robi;
     }
 
 void klient::zajmij()

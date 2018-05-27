@@ -1,32 +1,34 @@
 # depslib dependency file v1.0
-1527082482 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.cpp
+1527447373 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.cpp
 	"klient.hpp"
 	<cstdlib>
 	<ctime>
 	<windows.h>
 	"random.h"
 
-1527084325 c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.hpp
+1527447377 c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.hpp
+	"randliczby.hpp"
 
-1527087198 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\main.cpp
+1527437855 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\main.cpp
 	"sklep.hpp"
 	<fstream>
 	<iostream>
 
-1527087108 c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.hpp
+1527447603 c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.hpp
 	"klient.hpp"
+	"pracownik.hpp"
+	"randliczby.hpp"
 	<queue>
 	<fstream>
 	"ks.hpp"
 
-1527086964 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.cpp
+1527447733 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.cpp
 	"sklep.hpp"
 	<iostream>
 	"ks.hpp"
 	<ctime>
 	<cstdlib>
 	<windows.h>
-	"random.h"
 
 1525991069 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\random.cpp
 	"random.h"
@@ -57,7 +59,23 @@
 	"random.h"
 	"ks.hpp"
 
-1527084083 c:\users\netre\desktop\proi\projekt3\ksiegarnia\ks.hpp
+1527348861 c:\users\netre\desktop\proi\projekt3\ksiegarnia\ks.hpp
 	<stdlib.h>
 	<string>
+
+1527351907 c:\users\netre\desktop\proi\projekt3\ksiegarnia\pracownik.hpp
+	<stdlib.h>
+
+1527351310 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\pracownik.cpp
+	<stdlib.h>
+	"pracownik.hpp"
+
+1527447466 c:\users\netre\desktop\proi\projekt3\ksiegarnia\randliczby.hpp
+	<random>
+
+1527447441 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\randliczby.cpp
+	<random>
+	<chrono>
+	"randliczby.hpp"
+	<iostream>
 

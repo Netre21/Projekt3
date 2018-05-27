@@ -19,7 +19,7 @@ try//podaje moj kod
     if(a<1)//to znaczy ze nie ma zadnych dostepnych kas
         {
         string w2="Jezeli zadna kasa nie jest otwarta to sklep tez nie";
-        throw w2, plik;
+        throw w2;
         }
 
     if(b<1)// to znaczy ze nie ma zadnych pracownikow do obslugi kas lub bycia na sali

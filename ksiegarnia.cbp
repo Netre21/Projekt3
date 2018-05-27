@@ -37,6 +37,10 @@
 		<Unit filename="ks.cpp" />
 		<Unit filename="ks.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="pracownik.cpp" />
+		<Unit filename="pracownik.hpp" />
+		<Unit filename="randliczby.cpp" />
+		<Unit filename="randliczby.hpp" />
 		<Unit filename="random.cpp" />
 		<Unit filename="random.h" />
 		<Unit filename="sklep.cpp" />

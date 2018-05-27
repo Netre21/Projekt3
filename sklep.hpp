@@ -1,4 +1,6 @@
 #include"klient.hpp"
+#include"pracownik.hpp"
+#include"randliczby.hpp"
 #include<queue>
 #include<fstream>
 #include"ks.hpp"
@@ -21,11 +23,12 @@ class sklep: public intersklep
     int zapis;
     int ilosckas;
     int pracownicynasali;
-    int * zajecie_pracownikow;
+    vector<pracownik> pracownicy_sala;
     queue<int> * kasy;
     vector<klient> klienci;
     vector<ksiazka *> ksiazki;
     int *czas;
+    losowanie Rn;
 public:
     sklep(int k,int o, int przyr, int komp, int hum,int zap=0);
     ~sklep();

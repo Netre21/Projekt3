@@ -1,12 +1,10 @@
 
-
+#include"randliczby.hpp"
 #ifndef klient_hpp
 #define klient_hpp
 class interklient//interfejs klienta
     {
     public:
-    int numer;
-    bool zajety;
     virtual int nr()=0;//funkcja, ktora ma zwraca numer klienta
     virtual int zyj()=0;//funkcja, ktora ma losowac czynnosc, ktora wykona klient
     virtual void zajmij()=0;//funkcja, ktora ma zmienic stan klienta na zajety
@@ -16,6 +14,9 @@ class interklient//interfejs klienta
 
 class klient: public interklient
     {
+    int numer;
+    bool zajety;
+    losowanie RN;
 public:
     klient(int n);
     virtual int nr();//funckja, ktora ma zwracac numer klienta

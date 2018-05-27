@@ -4,7 +4,6 @@
 #include<ctime>
 #include<cstdlib>
 #include<windows.h>
-#include"random.h"
 using namespace std;
 
 sklep::sklep(int ka,int pracownicy, int przyr, int komp, int hum, int zap)
@@ -46,7 +45,11 @@ sklep::sklep(int ka,int pracownicy, int przyr, int komp, int hum, int zap)
         humanistyczne HM();
         ksiazki.push_back(new humanistyczne());
         }
-    zajecie_pracownikow=new int [pracownicynasali];//tablica int, gdzie przechowujemy informacje czy w danej jednostce czasu pracownik na sali z kims rozmawia
+    for(int i=0;i<pracownicynasali;i++)
+        {
+        pracownik PS(i+1);
+        pracownicy_sala.push_back(PS);
+        }
     zapis=zap;
     if(zapis==1)
         {
@@ -61,13 +64,10 @@ sklep::sklep(int ka,int pracownicy, int przyr, int komp, int hum, int zap)
 
 sklep::~sklep()
     {
-    delete [] zajecie_pracownikow;
+
     delete [] czas;
     delete [] kasy;
-    for(int i=0;i<ksiazki.size();i++)
-        {
-        delete ksiazki[i];
-        }
+
     }
 
 int sklep::szukajkasy()//funckja, ktora wyszukuje kase z najmniejsza kolejka i tam kieruje klienta
@@ -90,6 +90,7 @@ void sklep::zycie(int n)//funckcja, ktora odpowiada za zycie sklepu
     {
     int otwarty=1;
     int maxk=1;
+    int hehehe;
     while(otwarty<=n)//czas otwarcia
         {
         cout<<"czas: "<<otwarty<<endl;
@@ -137,14 +138,14 @@ void sklep::zycie(int n)//funckcja, ktora odpowiada za zycie sklepu
                     case 4:
                         for(int j=0;j<pracownicynasali;j++)
                             {
-                            if(zajecie_pracownikow[j]==0)
+                            if(pracownicy_sala[j].stan()==0)
                                 {
-                                cout<<"klient "<<klienci[i].nr()<<" rozmawia z pracownikiem "<<j+1<<endl;
+                                cout<<"klient "<<klienci[i].nr()<<" rozmawia z pracownikiem "<<pracownicy_sala[j].pnumer()<<endl;
                                 if(zapis==1)
                                     {
-                                    plikz<<"klient "<<klienci[i].nr()<<" rozmawia z pracownikiem "<<j+1<<endl;
+                                    plikz<<"klient "<<klienci[i].nr()<<" rozmawia z pracownikiem "<<pracownicy_sala[j].pnumer()<<endl;
                                     }
-                                zajecie_pracownikow[j]=1;
+                                pracownicy_sala[j].zajmij();
                                 break;
                                 }
                             }
@@ -160,8 +161,8 @@ void sklep::zycie(int n)//funckcja, ktora odpowiada za zycie sklepu
             }
         uzyciekasy();
         otwarty=otwarty+1;
-        Sleep(1000);//czekamy 1s
-        if(randomChance(0.3))//losujemy czy w danej jednostce czasu jakis klient wszedl do sklepu
+        Sleep(10);//czekamy 1s
+        if(Rn.losuj(0.3))//losujemy czy w danej jednostce czasu jakis klient wszedl do sklepu
             {
             klient a(maxk);
             klienci.push_back(a);
@@ -174,7 +175,7 @@ void sklep::zycie(int n)//funckcja, ktora odpowiada za zycie sklepu
             }
         for(int i=0;i<pracownicynasali;i++)//rozmowa z klientem trwa jedna jednostke czasu, wiec pod koniec tej jednostki zmieniamy stan pracownikow na wolny
             {
-            zajecie_pracownikow[i]=0;
+            pracownicy_sala[i].zwolnij();
             }
         }
     }
@@ -184,6 +185,7 @@ void sklep::uzyciekasy()//funkcja odpowiadajaca za przesuwanie kolejek przy kasa
     int n;
     int koszt=-1;
     string knaz;
+    int numerklienta;
     for(int j=0;j<ilosckas;j++)//wykonaj zawartosc dla kazdej kasy
         {
         if(kasy[j].size()!=0)//jezeli ktos stoi przy kasie to wykonaj wnetrze
@@ -192,7 +194,14 @@ void sklep::uzyciekasy()//funkcja odpowiadajaca za przesuwanie kolejek przy kasa
             if(czas[j]==0)//jezeli czas tej osoy minal to wykonaj wnetrze
                 {
                 czas[j]=4;//ustaw czas dla kolejnej osoby
-                n=randomInteger(1,3);//losuj jedna z 3 kategori ksiazki
+                for(int k=0;k<klienci.size();k++)//znajdz klienta, ktory wlasnie stal przy kasie
+                    {
+                    if(klienci[k].nr()==kasy[j].front())
+                        {
+                        numerklienta=k;
+                        }
+                    }
+                n=Rn.wylosuj(1,3);//losuj jedna z 3 kategori ksiazki
                 switch (n)
                     {
                 case 1:
@@ -212,7 +221,6 @@ void sklep::uzyciekasy()//funkcja odpowiadajaca za przesuwanie kolejek przy kasa
                             if(ksiazki[k]->knazwa()=="przyrodnicze")//jesli sie udalo usun ja z listy ksiazek dostepnych
                                 {
                                 koszt=ksiazki[k]->kcena();
-                                delete ksiazki[k];
                                 ksiazki.erase(ksiazki.begin()+k);
                                 break;
                                 }
@@ -222,7 +230,6 @@ void sklep::uzyciekasy()//funkcja odpowiadajaca za przesuwanie kolejek przy kasa
                             if(ksiazki[k]->knazwa()=="komputerowe")//jesli sie udalo usun ja z listy ksiazek dostepnych
                                 {
                                 koszt=ksiazki[k]->kcena();
-                                delete ksiazki[k];
                                 ksiazki.erase(ksiazki.begin()+k);
                                 break;
                                 }
@@ -232,7 +239,6 @@ void sklep::uzyciekasy()//funkcja odpowiadajaca za przesuwanie kolejek przy kasa
                             if(ksiazki[k]->knazwa()=="humanistyczne")//jesli sie udalo usun ja z listy ksiazek dostepnych
                                 {
                                 koszt=ksiazki[k]->kcena();
-                                delete ksiazki[k];
                                 ksiazki.erase(ksiazki.begin()+k);
                                 break;
                                 }
