@@ -13,8 +13,8 @@ try//podaje moj kod
         int blad=1;
         throw blad;
         }
-    int a,b,c,d,e,f;
-    plik>>a>>b>>c>>d>>e>>f;
+    int a,b,c,d,e,f,g;
+    plik>>a>>b>>c>>d>>e>>f>>g;
 
     if(a<1)//to znaczy ze nie ma zadnych dostepnych kas
         {
@@ -34,7 +34,7 @@ try//podaje moj kod
         throw w4;
         }
 
-    sklep empik(a,b,c,d,e,1);
+    sklep empik(a,b,c,d,e,g);
     empik.zycie(f);
     }
 catch(string w)//wyjatki, gdy udalo sie otworzyc plik, wiec musimy go zamknac

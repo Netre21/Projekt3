@@ -1,14 +1,13 @@
 # depslib dependency file v1.0
-1527448120 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.cpp
+1527450414 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.cpp
 	"klient.hpp"
 	<cstdlib>
-	<ctime>
 	<windows.h>
 
 1527447377 c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.hpp
 	"randliczby.hpp"
 
-1527437855 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\main.cpp
+1527450428 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\main.cpp
 	"sklep.hpp"
 	<fstream>
 	<iostream>
@@ -21,11 +20,10 @@
 	<fstream>
 	"ks.hpp"
 
-1527447733 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.cpp
+1527450564 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\sklep.cpp
 	"sklep.hpp"
 	<iostream>
 	"ks.hpp"
-	<ctime>
 	<cstdlib>
 	<windows.h>
 

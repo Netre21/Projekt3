@@ -1,7 +1,7 @@
 #include"sklep.hpp"
 #include<iostream>
 #include"ks.hpp"
-#include<ctime>
+
 #include<cstdlib>
 #include<windows.h>
 using namespace std;
@@ -32,17 +32,14 @@ sklep::sklep(int ka,int pracownicy, int przyr, int komp, int hum, int zap)
     //tworzymy vector, ktory przechowuje ksiazki 3 typow: przyrodniczych, humanistycznych i komputerowych
     for(int i=0;i<przyr;i++)//zapelniamy vector ksiazkami przyrodniczymi
         {
-        przyrodnicze PR();
         ksiazki.push_back(new przyrodnicze());
         }
     for(int i=0;i<komp;i++)//komputerowymi
         {
-        komputerowe KP();
         ksiazki.push_back(new komputerowe());
         }
     for(int i=0;i<hum;i++)//humanistycznymi
         {
-        humanistyczne HM();
         ksiazki.push_back(new humanistyczne());
         }
     for(int i=0;i<pracownicynasali;i++)
@@ -161,7 +158,7 @@ void sklep::zycie(int n)//funckcja, ktora odpowiada za zycie sklepu
             }
         uzyciekasy();
         otwarty=otwarty+1;
-        Sleep(10);//czekamy 1s
+        Sleep(1000);//czekamy 1s
         if(Rn.losuj(0.3))//losujemy czy w danej jednostce czasu jakis klient wszedl do sklepu
             {
             klient a(maxk);

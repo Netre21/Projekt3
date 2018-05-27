@@ -1,136 +1,146 @@
 czas: 1
-czas: 2
-czas: 3
 klient 1 wchodzi do sklepu
-czas: 4
+czas: 2
 klient 1 idzie do kasy 1
+czas: 3
+czas: 4
 klient 2 wchodzi do sklepu
 czas: 5
-czas: 6
-klient 3 wchodzi do sklepu
-czas: 7
-klient 2 rozmawia z pracownikiem 1
-klient 3 idzie do kasy 2
-klient 1 kupuje ksiazke z dzialu humanistycznego, w kasie numer 1 i placi za nia 41
-czas: 8
-klient 2 rozmawia z pracownikiem 1
-czas: 9
-klient 1 idzie do kasy 1
-klient 4 wchodzi do sklepu
-czas: 10
-klient 3 kupuje ksiazke z dzialu humanistycznego, w kasie numer 2 i placi za nia 37
-klient 5 wchodzi do sklepu
-czas: 11
 klient 2 wychodzi z ksiegarni
-klient 5 rozmawia z pracownikiem 1
-czas: 12
-klient 4 idzie do kasy 2
-klient 5 rezerwuje ksiazke
-klient 1 kupuje ksiazke z dzialu komputerowego, w kasie numer 1 i placi za nia 22
-klient 6 wchodzi do sklepu
-czas: 13
-klient 1 idzie do kasy 1
-klient 3 rozmawia z pracownikiem 1
-klient 6 idzie do kasy 3
-klient 7 wchodzi do sklepu
-czas: 14
-klient 3 idzie do kasy 4
-klient 7 wychodzi z ksiegarni
-czas: 15
-klient 4 kupuje ksiazke z dzialu komputerowego, w kasie numer 2 i placi za nia 20
-klient 8 wchodzi do sklepu
-czas: 16
-klient 4 rozmawia z pracownikiem 1
-klient 5 idzie do kasy 2
-klient 1 kupuje ksiazke z dzialu komputerowego, w kasie numer 1 i placi za nia 29
-klient 6 kupuje ksiazke z dzialu przyrodniczego, w kasie numer 3 i placi za nia 32
-czas: 17
-klient 4 idzie do kasy 1
-klient 6 idzie do kasy 3
-klient 3 kupuje ksiazke z dzialu komputerowego, w kasie numer 4 i placi za nia 29
-czas: 18
-klient 1 idzie do kasy 4
-klient 3 idzie do kasy 5
-klient 8 idzie do kasy 1
-klient 9 wchodzi do sklepu
-czas: 19
-klient 5 kupuje ksiazke z dzialu przyrodniczego, w kasie numer 2 i placi za nia 24
-czas: 20
-klient 9 rezerwuje ksiazke
-klient 4 kupuje ksiazke z dzialu przyrodniczego, w kasie numer 1 i placi za nia 26
-klient 6 kupuje ksiazke z dzialu przyrodniczego, w kasie numer 3 i placi za nia 53
-czas: 21
-klient 4 rezerwuje ksiazke
-klient 5 wychodzi z ksiegarni
-klient 9 idzie do kasy 2
-klientowi 1. nie udaje sie kupic ksiazki z dzialu przyrodniczego, w kasie numer 4 ,poniewaz sie skonczyly
-klient 3 kupuje ksiazke z dzialu humanistycznego, w kasie numer 5 i placi za nia 42
-czas: 22
-klient 6 rozmawia z pracownikiem 1
-czas: 23
-klient 3 idzie do kasy 3
-klient 10 wchodzi do sklepu
-czas: 24
-klient 4 wychodzi z ksiegarni
-klientowi 8. nie udaje sie kupic ksiazki z dzialu przyrodniczego, w kasie numer 1 ,poniewaz sie skonczyly
-klient 9 kupuje ksiazke z dzialu komputerowego, w kasie numer 2 i placi za nia 22
-czas: 25
-klient 1 rezerwuje ksiazke
-klient 6 idzie do kasy 1
-czas: 26
-klient 9 rezerwuje ksiazke
-klient 10 rozmawia z pracownikiem 1
-klient 3 kupuje ksiazke z dzialu humanistycznego, w kasie numer 3 i placi za nia 45
-czas: 27
-klient 3 rozmawia z pracownikiem 1
-czas: 28
-klient 3 idzie do kasy 2
-klient 8 idzie do kasy 3
-klient 10 idzie do kasy 4
-klientowi 6. nie udaje sie kupic ksiazki z dzialu przyrodniczego, w kasie numer 1 ,poniewaz sie skonczyly
-klient 11 wchodzi do sklepu
-czas: 29
-klient 9 idzie do kasy 1
-czas: 30
-klient 1 idzie do kasy 5
-klient 11 wychodzi z ksiegarni
-klient 12 wchodzi do sklepu
-czas: 31
-klient 6 rozmawia z pracownikiem 1
-klient 12 idzie do kasy 1
-klientowi 3. nie udaje sie kupic ksiazki z dzialu komputerowego, w kasie numer 2 ,poniewaz sie skonczyly
-klient 8 kupuje ksiazke z dzialu humanistycznego, w kasie numer 3 i placi za nia 41
-klient 10 kupuje ksiazke z dzialu komputerowego, w kasie numer 4 i placi za nia 41
-czas: 32
-klient 6 wychodzi z ksiegarni
-klient 10 rozmawia z pracownikiem 1
-klient 9 kupuje ksiazke z dzialu humanistycznego, w kasie numer 1 i placi za nia 37
-czas: 33
-klient 8 rezerwuje ksiazke
-klient 10 idzie do kasy 2
-klient 1 kupuje ksiazke z dzialu humanistycznego, w kasie numer 5 i placi za nia 45
-czas: 34
-klient 3 idzie do kasy 3
-klient 8 wychodzi z ksiegarni
-klient 13 wchodzi do sklepu
-czas: 35
+klient 1 kupuje ksiazke z dzialu przyrodniczego, w kasie numer 1 i placi za nia 43
+klient 3 wchodzi do sklepu
+czas: 6
 klient 1 rozmawia z pracownikiem 1
-klient 13 idzie do kasy 4
-czas: 36
-klientowi 12. nie udaje sie kupic ksiazki z dzialu komputerowego, w kasie numer 1 ,poniewaz sie skonczyly
-klientowi 10. nie udaje sie kupic ksiazki z dzialu humanistycznego, w kasie numer 2 ,poniewaz sie skonczyly
-czas: 37
-klient 9 rezerwuje ksiazke
-klientowi 3. nie udaje sie kupic ksiazki z dzialu humanistycznego, w kasie numer 3 ,poniewaz sie skonczyly
-czas: 38
+czas: 7
 klient 1 rozmawia z pracownikiem 1
 klient 3 idzie do kasy 1
-klient 12 rozmawia z pracownikiem 2
-klientowi 13. nie udaje sie kupic ksiazki z dzialu komputerowego, w kasie numer 4 ,poniewaz sie skonczyly
-klient 14 wchodzi do sklepu
-czas: 39
+czas: 8
+klient 4 wchodzi do sklepu
+czas: 9
+klient 4 idzie do kasy 2
+klient 5 wchodzi do sklepu
+czas: 10
+klient 5 idzie do kasy 3
+klient 3 kupuje ksiazke z dzialu humanistycznego, w kasie numer 1 i placi za nia 41
+czas: 11
+klient 1 idzie do kasy 1
+klient 3 idzie do kasy 4
+czas: 12
+klient 4 kupuje ksiazke z dzialu przyrodniczego, w kasie numer 2 i placi za nia 28
+czas: 13
+klient 4 idzie do kasy 2
+klient 5 kupuje ksiazke z dzialu komputerowego, w kasie numer 3 i placi za nia 29
+czas: 14
+klient 5 idzie do kasy 3
+klient 1 kupuje ksiazke z dzialu humanistycznego, w kasie numer 1 i placi za nia 41
+klient 3 kupuje ksiazke z dzialu komputerowego, w kasie numer 4 i placi za nia 29
+czas: 15
 klient 1 wychodzi z ksiegarni
-klient 12 idzie do kasy 2
-klient 13 rozmawia z pracownikiem 1
-czas: 40
+czas: 16
+klient 3 rezerwuje ksiazke
+klient 4 kupuje ksiazke z dzialu humanistycznego, w kasie numer 2 i placi za nia 37
+czas: 17
+klient 4 rezerwuje ksiazke
+klient 5 kupuje ksiazke z dzialu przyrodniczego, w kasie numer 3 i placi za nia 40
+klient 6 wchodzi do sklepu
+czas: 18
+klient 4 idzie do kasy 1
+klient 5 rezerwuje ksiazke
+klient 6 rezerwuje ksiazke
+czas: 19
+klient 5 idzie do kasy 2
+klient 6 rozmawia z pracownikiem 1
+klient 7 wchodzi do sklepu
+czas: 20
+klient 3 idzie do kasy 3
+klient 6 rozmawia z pracownikiem 1
+klient 7 wychodzi z ksiegarni
+czas: 21
+klient 6 rezerwuje ksiazke
+klient 4 kupuje ksiazke z dzialu przyrodniczego, w kasie numer 1 i placi za nia 49
+czas: 22
+klient 4 rezerwuje ksiazke
+klient 6 rozmawia z pracownikiem 1
+klient 5 kupuje ksiazke z dzialu komputerowego, w kasie numer 2 i placi za nia 32
+czas: 23
+klient 4 wychodzi z ksiegarni
+klient 6 rozmawia z pracownikiem 1
+klient 3 kupuje ksiazke z dzialu komputerowego, w kasie numer 3 i placi za nia 30
+klient 8 wchodzi do sklepu
+czas: 24
+klient 3 rozmawia z pracownikiem 1
+klient 5 rezerwuje ksiazke
+klient 8 rozmawia z pracownikiem 2
+klient 9 wchodzi do sklepu
+czas: 25
+klient 5 wychodzi z ksiegarni
+klient 8 idzie do kasy 1
+czas: 26
+klient 3 idzie do kasy 2
+klient 6 idzie do kasy 3
+klient 9 rozmawia z pracownikiem 1
+czas: 27
+klient 9 idzie do kasy 4
+czas: 28
+klient 8 kupuje ksiazke z dzialu komputerowego, w kasie numer 1 i placi za nia 29
+klient 10 wchodzi do sklepu
+czas: 29
+klient 8 rezerwuje ksiazke
+klientowi 3. nie udaje sie kupic ksiazki z dzialu komputerowego, w kasie numer 2 ,poniewaz sie skonczyly
+klientowi 6. nie udaje sie kupic ksiazki z dzialu komputerowego, w kasie numer 3 ,poniewaz sie skonczyly
+klient 11 wchodzi do sklepu
+czas: 30
+klient 6 idzie do kasy 1
+klient 8 rozmawia z pracownikiem 1
+klient 10 rozmawia z pracownikiem 2
+klient 11 idzie do kasy 2
+klient 9 kupuje ksiazke z dzialu humanistycznego, w kasie numer 4 i placi za nia 40
+czas: 31
+klient 3 rozmawia z pracownikiem 1
 klient 9 idzie do kasy 3
+klient 10 rozmawia z pracownikiem 2
+klient 12 wchodzi do sklepu
+czas: 32
+klient 3 rozmawia z pracownikiem 1
+klient 8 idzie do kasy 4
+klient 10 idzie do kasy 5
+klient 12 rozmawia z pracownikiem 2
+czas: 33
+klient 3 rozmawia z pracownikiem 1
+klient 12 rezerwuje ksiazke
+klientowi 6. nie udaje sie kupic ksiazki z dzialu przyrodniczego, w kasie numer 1 ,poniewaz sie skonczyly
+klient 11 kupuje ksiazke z dzialu humanistycznego, w kasie numer 2 i placi za nia 36
+czas: 34
+klient 6 idzie do kasy 1
+klient 11 rozmawia z pracownikiem 1
+klientowi 9. nie udaje sie kupic ksiazki z dzialu komputerowego, w kasie numer 3 ,poniewaz sie skonczyly
+czas: 35
+klient 3 rezerwuje ksiazke
+klientowi 8. nie udaje sie kupic ksiazki z dzialu komputerowego, w kasie numer 4 ,poniewaz sie skonczyly
+klientowi 10. nie udaje sie kupic ksiazki z dzialu przyrodniczego, w kasie numer 5 ,poniewaz sie skonczyly
+klient 13 wchodzi do sklepu
+czas: 36
+klient 3 rozmawia z pracownikiem 1
+klient 8 rezerwuje ksiazke
+klient 9 idzie do kasy 2
+klient 10 rezerwuje ksiazke
+klient 13 idzie do kasy 3
+czas: 37
+klient 3 idzie do kasy 4
+klient 10 wychodzi z ksiegarni
+klientowi 6. nie udaje sie kupic ksiazki z dzialu przyrodniczego, w kasie numer 1 ,poniewaz sie skonczyly
+klient 14 wchodzi do sklepu
+czas: 38
+klient 6 idzie do kasy 1
+klient 11 rezerwuje ksiazke
+klient 12 idzie do kasy 5
+klient 14 idzie do kasy 1
+czas: 39
+klient 8 idzie do kasy 2
+klient 9 kupuje ksiazke z dzialu humanistycznego, w kasie numer 2 i placi za nia 48
+klient 13 kupuje ksiazke z dzialu komputerowego, w kasie numer 3 i placi za nia 48
+czas: 40
+klient 9 rozmawia z pracownikiem 1
+klient 11 idzie do kasy 3
+klient 13 wychodzi z ksiegarni
+klientowi 3. nie udaje sie kupic ksiazki z dzialu komputerowego, w kasie numer 4 ,poniewaz sie skonczyly

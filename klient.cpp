@@ -1,7 +1,7 @@
 #include"klient.hpp"
 
 #include<cstdlib>
-#include<ctime>
+
 #include<windows.h>
 enum dzialanie
 {
