@@ -15,7 +15,7 @@ class losowanie: public interlosowanie
 mt19937 b;
 public:
 losowanie();
-virtual bool losuj(double a);
-virtual int wylosuj(int a,int b);
+virtual bool losuj(double a);//funkcja do losowania z podanym prawdopodobienstwem
+virtual int wylosuj(int a,int b);//funckja do losowania wartosci z jakiegos przedzialu
 };
 #endif // randliczby_hpp

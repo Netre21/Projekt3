@@ -3,7 +3,6 @@
 #include<cstdlib>
 #include<ctime>
 #include<windows.h>
-#include"random.h"
 enum dzialanie
 {
 nic_nie_robi=0,

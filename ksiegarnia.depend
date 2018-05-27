@@ -1,10 +1,9 @@
 # depslib dependency file v1.0
-1527447373 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.cpp
+1527448120 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.cpp
 	"klient.hpp"
 	<cstdlib>
 	<ctime>
 	<windows.h>
-	"random.h"
 
 1527447377 c:\users\netre\desktop\proi\projekt3\ksiegarnia\klient.hpp
 	"randliczby.hpp"
@@ -70,10 +69,10 @@
 	<stdlib.h>
 	"pracownik.hpp"
 
-1527447466 c:\users\netre\desktop\proi\projekt3\ksiegarnia\randliczby.hpp
+1527448110 c:\users\netre\desktop\proi\projekt3\ksiegarnia\randliczby.hpp
 	<random>
 
-1527447441 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\randliczby.cpp
+1527448109 source:c:\users\netre\desktop\proi\projekt3\ksiegarnia\randliczby.cpp
 	<random>
 	<chrono>
 	"randliczby.hpp"

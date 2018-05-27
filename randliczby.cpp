@@ -12,7 +12,7 @@ losowanie::losowanie()
     }
 
 
-bool losowanie::losuj(double a)
+bool losowanie::losuj(double a)//funkcja do losowania z podanym prawdopodobienstwem
     {
     int mnoznik=1;
     while(ceil(a)!=a)
@@ -32,7 +32,7 @@ bool losowanie::losuj(double a)
         }
     }
 
-int losowanie::wylosuj(int a, int c)
+int losowanie::wylosuj(int a, int c)//funckja do losowania wartosci z jakiegos przedzialu
     {
     return b()%(c-a+1)+a;
     }
