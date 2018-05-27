@@ -64,6 +64,7 @@ sklep::~sklep()
 
     delete [] czas;
     delete [] kasy;
+    plikz.close();
 
     }
 
